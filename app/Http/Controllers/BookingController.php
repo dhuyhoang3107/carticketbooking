@@ -17,7 +17,7 @@ class BookingController extends Controller
         where('awaycome', '=',  $key1 )->
         Where('destination', '=', $key2  )->
         orWhere('departure_time', '=',   $datesearch   )
-        ->get(); 
+        ->get();
         return view('bookingticket', ['show_tickets' => $show_tickets, ]);
     }
 

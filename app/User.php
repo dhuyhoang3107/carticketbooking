@@ -41,7 +41,7 @@ class User extends Authenticatable
     }
     public $title = "Quản lý thành viên";
     public function getRecords($conditions) {
-        $per_page = 5;
+        $per_page = 7;
         return self::where($conditions)->paginate($per_page);
     }
     public function getFilter($request, $configs) {

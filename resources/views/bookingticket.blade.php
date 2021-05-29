@@ -4,10 +4,10 @@
 
 
 
-    
+
         <div class="flex-center position-ref ">
-           
-           
+
+
             <div class="content ">
                 <!-- <div class="title m-b-md"> -->
                 <div class="kqtk">
@@ -17,16 +17,16 @@
                     <form method="get" action="{{ route('search_ticket') }}">
                     @csrf
                         <div class="input-search dv border-left">
-                            
+
                             <div class="fl img border-left">
                                 <img src="{{asset('/fontend/images/diachi7.jpg')}}" alt="biểu tượng địa chỉ" width="25px" height="30px">
-                            </div> 
-                            <div class="input-text">
+                            </div>
+                            <div class="input-text ">
                                 <input type="text" class="input-text " name="key1" placeholder="Điểm đi">
 
                             </div>
 
-                           
+
                             <div class="iQPTej"></div>
                             <div class="fl img">
                                 <img src="{{asset('/fontend/images/diachi7.jpg')}}" alt="biểu tượng địa chỉ" width="25px" height="30px">
@@ -45,7 +45,7 @@
                                 <input type="text" class="input-text input-date" name="datesearch" placeholder="Ngày đi">
                             </div>
                         </div>
-                        
+
                         <div class="input-submit border-right">
                             <input type="submit" value="TÌM VÉ XE" class="input-submit border-right">
                         </div>
@@ -56,36 +56,36 @@
                         </div> -->
                         </form>
                     </div>
-                      
-                    
+
+
                     <div class="trip-style">
                         <span>Vé xe khả dụng</span>
                     </div>
-                    @foreach ($show_tickets as $show_ticket)   
+                    @foreach ($show_tickets as $show_ticket)
                     <form method="POST" action="{{route('user.booking',$show_ticket->id)}}">
                     @csrf
-                  
-                   
+
+
 
                     <div class=" tickit-body dv border-left border-right ">
                         <div class="img-tickit fl">
-                      
+
                         <td style="width: 150px;"><img src="{{asset('uploads/image/'. $show_ticket->vehicles->image)}}" width="260px" height="260px"></td>
                         </div>
                         <div class="content-tickit fl">
                             <!-- <div class="bus-price "> -->
                                     <div class="bus">Nhà xe: {{ $show_ticket->vehicles->garage }} </div>
-                                <div class="price">Giá tiền: {{$show_ticket->price }}</div>
+                                <div class="price">Giá tiền: {{$show_ticket->price }}đ</div>
                                 <div>
-                                
+
                                 </div>
                             <!-- </div> -->
-                                
-                        
-                            <div class="seat-type ">Loại xe: {{ $show_ticket->vehicles->type }}・Số chỗ: {{ $show_ticket->vehicles->number_of_seats }} </div>
+
+
+                            <div class="seat-type " style="font-weight: bold;">{{ $show_ticket->vehicles->type }}・{{ $show_ticket->vehicles->number_of_seats }} chỗ </div>
 
                             <div class="form-to">
-                                
+
                                     <svg class="fl " xmlns="http://www.w3.org/2000/svg" width="14" height="74" viewBox="0 0 14 74">
                                         <path fill="none" stroke="#787878" stroke-linecap="round" stroke-width="2" stroke-dasharray="0 7" d="M7 13.5v46">
                                         </path>
@@ -98,28 +98,28 @@
                                     </svg>
                                 <div class="form-to-content">
                                     <div class="hour-place fl">
-                                        <div class="hour"> {{$show_ticket->awaycome }}</div> <div class="place" style="font-weight: bold;"> &nbsp; | Ngày đi: {{$show_ticket->departure_time }}" </div>
+                                        <div class="hour"> {{$show_ticket->awaycome }}</div> <div class="place" style="font-weight: bold;"> &nbsp; | Ngày đi: {{$show_ticket->departure_time }} </div>
                                     </div>
                                     <div class="duration">đến</div>
                                     <div class="hour-place fl">
-                                        <div class="hour">{{$show_ticket->destination }}" </div> <div class="place" style="font-weight: bold;"> &nbsp; | Ngày đến:{{$show_ticket->arrival_time }}</div> 
+                                        <div class="hour">{{$show_ticket->destination }} </div> <div class="place" style="font-weight: bold;"> &nbsp; | Ngày đến: {{$show_ticket->arrival_time }}</div>
                                     </div>
-                                   
-                                    
+
+
                                 </div>
                                 <br>
-                                
-                                
+
+
                             </div>
-                        <button type="submit" class="booking-tickit" style="background-color:#cdcd00; border: none; padding: 7px 15px 7px 15px;border-radius: 4px; margin-right: 30px; margin-top: 20px;"  >    
+                        <button type="submit" class="booking-tickit" style="background-color:#cdcd00; border: none; padding: 7px 15px 7px 15px;border-radius: 4px; margin-right: 30px; margin-top: 20px;"  >
                             Đặt vé
                         </button>
-                            
+
                         </div>
-                        
-                        
-                    </div> 
-                   
+
+
+                    </div>
+
                     </form>
                     @endforeach
                     @if(session('success'))
@@ -133,17 +133,17 @@
                         </div>
                         @endif
                 </div>
-                
-                
-                
+
+
+
             </div>
-               
+
 
         </div>
         <hr class="hr" >
         <div class="footer">
-            
-            
+
+
             <div class="footer__logo">
                 <img src="{{asset('/fontend/images/logo.jpg')}}" width="150px" height="50px" >
 
@@ -151,14 +151,14 @@
             <div class="footer__gt">
                 {{ __('LIÊN HỆ VỚI CHÚNG TÔI') }}
                 {{ __('Datvexe@gmail.com') }}
-                
+
             </div>
 
         </div>
 
-    
-    
-  
+
+
+
 
 
 

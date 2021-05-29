@@ -16,7 +16,7 @@ class CreateVehiclesTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('garage')->nullable();
-            $table->tinyInteger('type')->nullable();
+            $table->string('type')->nullable();
             $table->integer('number_of_seats')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

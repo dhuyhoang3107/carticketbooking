@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/clear-cache',function(){
+    $exitcode = Artisan::call('cache:clear');
+});
 Route::get('/home', function () {
     return view('home');
 });
@@ -44,7 +47,7 @@ Route::middleware(['admin'])->group(function() {
     // search
     Route::post('/admin/Manager/{model}', 'ManagerUserController@manager')->name('manageruser');
     Route::post('/admin/manager/{model}', 'ManagerTicketController@manager')->name('managerticket');
-    Route::post('/admin/managerv/{model}', 'ManagerVehiclesController@manager')->name('managervehicles'); 
+    Route::post('/admin/managerv/{model}', 'ManagerVehiclesController@manager')->name('managervehicles');
     // manageruser
     Route::get('/admin/ManagerUser/Edit/{id}', 'ManagerUserController@edit')->name('usermanager.edit');
     Route::post('/admin/ManagerUser/Editpw/{id}', 'ManagerUserController@updatepw')->name('usermanager.updatepw');
@@ -53,7 +56,7 @@ Route::middleware(['admin'])->group(function() {
     Route::post('/admin/ManagerUser/Create', 'ManagerUserController@createupdate')->name('usermanager.createupdate');
     Route::get('/admin/ManagerUser/{id}', 'ManagerUserController@delete')->name('usermanager.delete');
     // managerticket
-  
+
     Route::get('/admin/ManagerTicket/Create', 'ManagerTicketController@create')->name('ticket.create');
     Route::post('/admin/ManagerTicket/Create', 'ManagerTicketController@createupdate')->name('ticket.createupdate');
     Route::get('/admin/ManagerTicket/Edit/{id}', 'ManagerTicketController@edit')->name('ticket.edit');

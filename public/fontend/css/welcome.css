@@ -65,6 +65,11 @@ html, body {
     font-size: 22px;
     /* background-color: #cdcd00; */
     outline: none;
+-webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+ 
     
     
 

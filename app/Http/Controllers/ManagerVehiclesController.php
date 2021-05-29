@@ -26,10 +26,10 @@ class ManagerVehiclesController extends Controller
         $adminUser = Auth::guard('admin')->user();
         return view('admin.vehicles.create',[
             'user'=>$adminUser
-        ]); 
+        ]);
     }
     public function createupdate(Request $request) {
-      
+
         $adminUser = Auth::guard('admin')->user();
         $vehicles = new Vehicles;
         $vehicles->garage = $request['garage'];
@@ -49,8 +49,8 @@ class ManagerVehiclesController extends Controller
         return redirect('/admin/managerv/Vehicles');
         return view([
             'user'=>$adminUser
-        ]); 
-        
+        ]);
+
     }
     // public function createupdate(Request $request) {
     //     $adminUser = Auth::guard('admin')->user();
@@ -66,7 +66,7 @@ class ManagerVehiclesController extends Controller
     //                 'garage' => 'required|unique:vehicles'
     //             ]);
     //         }
-    //         if ($validate) {   
+    //         if ($validate) {
     //             $vehicles->garage = $request['garage'];
     //             $vehicles->type = $request['type'];
     //             $vehicles->number_of_seats = $request['number_of_seats'];
@@ -75,7 +75,7 @@ class ManagerVehiclesController extends Controller
     //         return redirect('/admin/managerv/Vehicles');
     //         return view([
     //             'user'=>$adminUser
-    //         ]);    
+    //         ]);
     //         } else {
     //             return redirect()->back();
     //             $request->session()->flash('error', 'Tạo mới thất bại!!!');
@@ -83,7 +83,7 @@ class ManagerVehiclesController extends Controller
     //     } else {
     //         return redirect()->back();
     //     }
-    // } 
+    // }
     public function edit($id) {
         $adminUser = Auth::guard('admin')->user();
         $vehicles = Vehicles::find($id);
@@ -113,7 +113,7 @@ class ManagerVehiclesController extends Controller
             return view('admin.vehicles.edit',[
                 'vehicles'=>$vehicles,
                 'user'=>$adminUser
-            ]); 
+            ]);
 }
     public function delete($id) {
         $adminUser = Auth::guard('admin')->user();
@@ -123,7 +123,6 @@ class ManagerVehiclesController extends Controller
         return view([
             'users'=>$users,
             'user'=>$adminUser
-            
             ]);
     }
 }

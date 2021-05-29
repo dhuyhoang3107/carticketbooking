@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="">
-            <div style="width: 1200px; margin-left: auto; margin-right: auto;">   
+            <div style="width: 1200px; margin-left: auto; margin-right: auto;">
             <div class="page-title">
               <div class="title_left">
                 <h3>Thông tin vé của tôi</h3>
@@ -37,7 +37,7 @@
                       <tbody>
                       @foreach ($tickets as $stt => $ticket)
                         <tr>
-                          <td scope="row">{{$stt}}</td> 
+                          <td scope="row">{{$stt}}</td>
                           <td>{{$ticket->number}}</td>
                           <td>{{$ticket->awaycome}}</td>
                           <td>{{$ticket->destination}}</td>
@@ -50,13 +50,13 @@
                           <td style="width: 150px;"><img src="{{asset('uploads/image/'. $ticket->vehicles->image)}}" width="150px" height="90px"></td>
                         </tr>
                         @endforeach
-                        
-                   
+
+
                       </tbody>
                     </table>
                     {{Auth::user()->links}}
                   </div>
-                
+
               </div>
 
               <div class="clearfix"></div>

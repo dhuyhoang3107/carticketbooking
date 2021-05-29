@@ -11,7 +11,7 @@ class Ticket extends Base
     protected $table = 'tickets';
     public $timestamps = True;
     protected $fillable = [
-        'number','users_id','awaycome','destination','departure_time','arrival_time','price','pick_up_point',
+        'number','users_id','vehicles_id','awaycome','destination','departure_time','arrival_time','price','pick_up_point',
     ];
     public function users(){
         return $this->hasOne(User::class, 'id', 'users_id');

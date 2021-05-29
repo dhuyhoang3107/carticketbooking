@@ -38,7 +38,7 @@ class UserController extends Controller
                     'email' => 'required|email|unique:users'
                 ]);
             }
-            if ($validate) {   
+            if ($validate) {
             $user->name = $request ['name'];
             $user->email = $request ['email'];
             $user->address = $request ['address'];
@@ -53,7 +53,7 @@ class UserController extends Controller
         } else {
             return redirect()->back();
         }
-    } 
+    }
     public function passwordEdit() {
         if (Auth::user()) {
 
@@ -84,7 +84,7 @@ class UserController extends Controller
                 $request->session()->flash('error', 'Đổi mật khẩu thất bại!!!');
                 return redirect()->route('password.edit');
             }
-        } 
+        }
     }
     public function profileticket() {
         $tickets = Ticket::with('users','vehicles')->where('users_id',[Auth::user()->id])->get();

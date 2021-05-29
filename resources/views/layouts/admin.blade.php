@@ -10,16 +10,16 @@
     <title>Admin</title>
 
     <!-- Bootstrap -->
-    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="{{asset('vendors/nprogress/nprogress.css" rel="stylesheet')}}">
     <!-- bootstrap-daterangepicker -->
-    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="{{asset('vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="/backend/css/custom.min.css" rel="stylesheet">
+    <link href="{{asset('backend/css/custom.min.css" rel="stylesheet')}}">
   </head>
 
   <body class="nav-md">

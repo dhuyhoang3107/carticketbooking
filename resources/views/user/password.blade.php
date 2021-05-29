@@ -20,7 +20,7 @@
                         <div class="alert-danger" role="alert">
                         {{session('error')}}
                         </div>
-                        @endif
+                        @endif 
                         <br>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mật khẩu hiện tại') }}</label>
